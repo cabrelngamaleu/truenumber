@@ -1,0 +1,20 @@
+{
+  "name": "truenumber-app",
+  "version": "1.0.0",
+  "description": "Application TrueNumber - Jeu de nombres avec gestion d'utilisateurs",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "server:dev": "cd server && npm run dev",
+    "client:dev": "cd client && npm run dev",
+    "build": "cd client && npm run build",
+    "start": "cd server && npm start",
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install"
+  },
+  "keywords": ["truenumber", "game", "nodejs", "nextjs", "mongodb"],
+  "author": "Développeur",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

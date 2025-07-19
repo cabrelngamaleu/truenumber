@@ -1,0 +1,428 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Couleurs officielles du Cameroun */
+:root {
+  --cameroon-green: #007A3D;
+  --cameroon-red: #CE1126;
+  --cameroon-yellow: #FECB00;
+  --cameroon-green-dark: #005A2D;
+  --cameroon-red-dark: #A50E1F;
+  --cameroon-yellow-dark: #E6B800;
+  --cameroon-green-light: #33B86A;
+  --cameroon-red-light: #D63A4F;
+  --cameroon-yellow-light: #FFD633;
+}
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(135deg, #0F172A 0%, #1E293B 25%, #334155 50%, #1E293B 75%, #0F172A 100%);
+    background-attachment: fixed;
+    color: white;
+    min-height: 100vh;
+  }
+  
+  /* Scrollbar personnalisée */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #1E293B;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--cameroon-green);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--cameroon-green-dark);
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 sm:px-6 sm:py-3 border border-transparent text-sm font-semibold rounded-xl shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all duration-300 transform hover:scale-105;
+    background: linear-gradient(135deg, var(--cameroon-green), var(--cameroon-green-dark));
+    box-shadow: 0 4px 15px rgba(0, 122, 61, 0.3);
+  }
+  
+  .btn-primary {
+    @apply btn text-white;
+    background: linear-gradient(135deg, var(--cameroon-green), var(--cameroon-green-dark));
+    box-shadow: 0 4px 15px rgba(0, 122, 61, 0.3);
+  }
+  
+  .btn-primary:hover {
+    background: linear-gradient(135deg, var(--cameroon-green-dark), var(--cameroon-green));
+    box-shadow: 0 6px 20px rgba(0, 122, 61, 0.4);
+  }
+  
+  .btn-secondary {
+    @apply btn text-white;
+    background: linear-gradient(135deg, #475569, #334155);
+    box-shadow: 0 4px 15px rgba(71, 85, 105, 0.3);
+  }
+  
+  .btn-success {
+    @apply btn text-white;
+    background: linear-gradient(135deg, var(--cameroon-green), var(--cameroon-green-light));
+    box-shadow: 0 4px 15px rgba(0, 122, 61, 0.3);
+  }
+  
+  .btn-danger {
+    @apply btn text-white;
+    background: linear-gradient(135deg, var(--cameroon-red), var(--cameroon-red-dark));
+    box-shadow: 0 4px 15px rgba(206, 17, 38, 0.3);
+  }
+  
+  .btn-warning {
+    @apply btn text-gray-900;
+    background: linear-gradient(135deg, var(--cameroon-yellow), var(--cameroon-yellow-dark));
+    box-shadow: 0 4px 15px rgba(254, 203, 0, 0.3);
+  }
+  
+  .btn-outline {
+    @apply btn bg-transparent text-white border-2;
+    border-color: var(--cameroon-green);
+    box-shadow: 0 4px 15px rgba(0, 122, 61, 0.1);
+  }
+  
+  .btn-outline:hover {
+    background: var(--cameroon-green);
+    @apply text-white;
+  }
+  
+  .input {
+    @apply block w-full px-3 py-2 sm:px-4 sm:py-3 border-2 rounded-xl shadow-sm placeholder-gray-400 focus:outline-none transition-all duration-300;
+    border-color: #475569;
+    background: rgba(30, 41, 59, 0.8);
+    backdrop-filter: blur(10px);
+    color: white;
+  }
+  
+  .input:focus {
+    border-color: var(--cameroon-green);
+    box-shadow: 0 0 0 3px rgba(0, 122, 61, 0.2);
+    background: rgba(30, 41, 59, 0.9);
+  }
+  
+  .input-error {
+    @apply input;
+    border-color: var(--cameroon-red);
+  }
+  
+  .input-error:focus {
+    border-color: var(--cameroon-red);
+    box-shadow: 0 0 0 3px rgba(206, 17, 38, 0.2);
+  }
+  
+  .card {
+    @apply overflow-hidden shadow-xl rounded-2xl border;
+    background: rgba(30, 41, 59, 0.8);
+    backdrop-filter: blur(20px);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-header {
+    @apply px-4 py-4 sm:px-6 sm:py-5 lg:px-8 border-b;
+    border-color: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, rgba(0, 122, 61, 0.1), rgba(254, 203, 0, 0.1));
+  }
+  
+  .card-body {
+    @apply px-4 py-4 sm:px-6 sm:py-6 lg:p-8;
+  }
+  
+  .card-footer {
+    @apply px-4 py-3 sm:px-6 sm:py-4 lg:px-8 border-t;
+    border-color: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, rgba(0, 122, 61, 0.05), rgba(254, 203, 0, 0.05));
+  }
+  
+  /* Styles futuristes */
+  .futuristic-container {
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+  
+  .glass-effect {
+    background: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .neon-glow {
+    box-shadow: 0 0 20px var(--cameroon-green), 0 0 40px var(--cameroon-green), 0 0 60px var(--cameroon-green);
+  }
+  
+  .cameroon-gradient {
+    background: linear-gradient(135deg, var(--cameroon-green), var(--cameroon-yellow), var(--cameroon-red));
+  }
+  
+  .cameroon-gradient-text {
+    background: linear-gradient(135deg, var(--cameroon-green), var(--cameroon-yellow), var(--cameroon-red));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+  
+  .animate-bounce-in {
+    animation: bounceIn 0.6s ease-out;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-gradient {
+    animation: gradientShift 3s ease infinite;
+  }
+  
+  /* Couleurs utilitaires Cameroun */
+  .text-cameroon-green { color: var(--cameroon-green); }
+  .text-cameroon-red { color: var(--cameroon-red); }
+  .text-cameroon-yellow { color: var(--cameroon-yellow); }
+  .bg-cameroon-green { background-color: var(--cameroon-green); }
+  .bg-cameroon-red { background-color: var(--cameroon-red); }
+  .bg-cameroon-yellow { background-color: var(--cameroon-yellow); }
+  .border-cameroon-green { border-color: var(--cameroon-green); }
+  .border-cameroon-red { border-color: var(--cameroon-red); }
+  .border-cameroon-yellow { border-color: var(--cameroon-yellow); }
+}
+
+/* Animations personnalisées */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 166, 81, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 166, 81, 0.6), 0 0 40px rgba(255, 205, 0, 0.3);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Effet de particules pour le background */
+.particles-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.particles-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(0, 166, 81, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 205, 0, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(206, 17, 38, 0.1) 0%, transparent 50%);
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Améliorations pour la responsivité mobile */
+@media (max-width: 640px) {
+  .btn {
+    @apply text-xs px-3 py-2;
+  }
+  
+  .futuristic-container {
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  
+  .card {
+    border-radius: 16px;
+  }
+  
+  /* Amélioration des interactions tactiles */
+  .btn, .input, .futuristic-container {
+    touch-action: manipulation;
+  }
+  
+  /* Espacement réduit pour mobile */
+  .space-y-6 > * + * {
+    margin-top: 1rem;
+  }
+  
+  .space-y-8 > * + * {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Grilles adaptatives */
+  .grid-cols-1.md\:grid-cols-2 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  
+  .grid-cols-1.md\:grid-cols-3 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  
+  .grid-cols-1.md\:grid-cols-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  
+  /* Textes adaptatifs */
+  .text-4xl {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+  
+  .text-3xl {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+  }
+  
+  .text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+/* Améliorations pour les tablettes */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .grid-cols-1.lg\:grid-cols-2 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .futuristic-container {
+    padding: 1.5rem;
+  }
+}
+
+/* Optimisations pour les écrans tactiles */
+@media (hover: none) and (pointer: coarse) {
+  .hover\:scale-105:hover {
+    transform: none;
+  }
+  
+  .group:hover .group-hover\:scale-105 {
+    transform: none;
+  }
+  
+  .btn:hover {
+    transform: none;
+  }
+  
+  /* Augmentation de la zone de touche */
+  .btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  button, a, input, select, textarea {
+    min-height: 44px;
+  }
+}
+
+/* Styles pour les écrans haute densité */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .neon-glow {
+    box-shadow: 0 0 10px var(--cameroon-green), 0 0 20px var(--cameroon-green), 0 0 30px var(--cameroon-green);
+  }
+  
+  .animate-pulse-glow {
+    animation: pulseGlowHD 2s ease-in-out infinite;
+  }
+}
+
+@keyframes pulseGlowHD {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(0, 166, 81, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(0, 166, 81, 0.6), 0 0 20px rgba(255, 205, 0, 0.3);
+  }
+}
