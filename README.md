@@ -204,6 +204,70 @@ Après le démarrage du serveur, un compte administrateur par défaut est créé
 - **Mot de passe** : `admin123`
 - **Rôle** : `admin`
 
+## 🚀 Déploiement
+
+### Déploiement sur Vercel (Frontend)
+
+1. **Prérequis** :
+   - Compte GitHub avec le repository TrueNumber
+   - Compte Vercel (gratuit)
+
+2. **Étapes de déploiement** :
+   
+   a. **Connectez-vous à Vercel** :
+   - Allez sur [vercel.com](https://vercel.com)
+   - Connectez-vous avec votre compte GitHub
+   
+   b. **Importez votre projet** :
+   - Cliquez sur "New Project"
+   - Sélectionnez votre repository `truenumber`
+   - Configurez les paramètres :
+     - **Framework Preset** : Next.js
+     - **Root Directory** : `client`
+     - **Build Command** : `npm run build`
+     - **Output Directory** : `.next`
+   
+   c. **Variables d'environnement** :
+   - Ajoutez la variable : `NEXT_PUBLIC_API_URL`
+   - Valeur : URL de votre API backend déployée
+   
+   d. **Déployez** :
+   - Cliquez sur "Deploy"
+   - Vercel construira et déploiera automatiquement votre application
+
+3. **Configuration automatique** :
+   - Le fichier `vercel.json` est déjà configuré
+   - Les redirections sont automatiquement gérées
+   - SSL/HTTPS activé par défaut
+
+### Déploiement du Backend
+
+Pour le backend, vous pouvez utiliser :
+- **Heroku** (recommandé pour MongoDB Atlas)
+- **Railway**
+- **Render**
+- **DigitalOcean App Platform**
+
+#### Exemple avec Heroku :
+```bash
+# Installer Heroku CLI
+npm install -g heroku
+
+# Se connecter à Heroku
+heroku login
+
+# Créer une application
+heroku create truenumber-api
+
+# Configurer les variables d'environnement
+heroku config:set MONGODB_URI=your_mongodb_atlas_uri
+heroku config:set JWT_SECRET=your_jwt_secret
+heroku config:set NODE_ENV=production
+
+# Déployer
+git subtree push --prefix server heroku main
+```
+
 ## 🔧 Développement
 
 ### Lancement en Mode Développement
@@ -268,7 +332,7 @@ Pour le support ou les questions, veuillez ouvrir une issue dans le repository.
 
 ## 📝 Copyright
 
-**© 2024 Cabrel Ngamaleu. Tous droits réservés.**
+**© 2025 Cabrel Ngamaleu. Tous droits réservés.**
 
 *TrueNumber Game - Application de jeu de nombres développée avec passion au Cameroun 🇨🇲*
 
