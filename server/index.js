@@ -349,6 +349,16 @@ app.get('/api/history/all', authenticateToken, requireAdmin, (req, res) => {
 // Swagger documentation
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
+// Health check route
+app.get('/api/health', (req, res) => {
+  res.json({ 
+    status: 'OK',
+    message: 'TrueNumber API is running',
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime()
+  });
+});
+
 // Base route
 app.get('/', (req, res) => {
   res.json({ 
