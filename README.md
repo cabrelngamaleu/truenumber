@@ -401,6 +401,47 @@ Cette combinaison vous donne :
 - ✅ Déploiement automatique sur push Git
 - ✅ Logs et monitoring
 
+---
+
+## 🌐 **APPLICATION DÉPLOYÉE - LIVE URLS**
+
+### 🎉 **Déploiement Réussi !**
+
+L'application TrueNumber est maintenant **entièrement déployée et fonctionnelle** :
+
+#### 🔗 **URLs de Production :**
+
+- **🌐 Frontend (Netlify)** : `https://687c776711c19403f61e0c--truenumber2025.netlify.app`
+- **🚂 Backend API (Railway)** : `https://truenumber-production.up.railway.app/api`
+- **📚 Documentation API** : `https://truenumber-production.up.railway.app/api-docs`
+
+#### ✅ **Services Actifs :**
+
+- **Frontend** : Déployé sur Netlify avec Next.js (export statique)
+- **Backend** : Déployé sur Railway avec Node.js + Express
+- **Base de données** : MongoDB intégré Railway
+- **API** : Entièrement fonctionnelle avec authentification JWT
+- **HTTPS** : Activé sur tous les services
+
+#### 🎮 **Fonctionnalités Disponibles :**
+
+- ✅ Inscription et connexion des utilisateurs
+- ✅ Système de solde (1000€ de départ)
+- ✅ Jeu TrueNumber complet
+- ✅ Historique des parties
+- ✅ Classement des joueurs
+- ✅ Interface responsive et moderne
+- ✅ Compte admin par défaut : `admin@truenumber.com` / `admin123`
+
+#### 🔧 **Configuration Technique :**
+
+- **Netlify** : Configuration via `netlify.toml` avec export statique Next.js
+- **Railway** : Configuration via `nixpacks.toml` et `railway.json`
+- **Variables d'environnement** : `NEXT_PUBLIC_API_URL` configurée
+- **Build automatique** : Déploiement automatique sur push GitHub
+
+---
+
 ### Déploiement sur Vercel (Frontend)
 
 1. **Prérequis** :
