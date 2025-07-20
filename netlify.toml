@@ -1,32 +1,13 @@
 [build]
-  # Répertoire de base pour la construction
   base = "client"
-  
-  # Commande de construction
   command = "npm run build"
-  
-  # Répertoire de publication
-  publish = ".next"
+  publish = "out"
 
 [build.environment]
-  # Version de Node.js
   NODE_VERSION = "18"
 
-# Redirections pour Next.js
+# Redirections pour Next.js App Router
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-
-# Headers de sécurité
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block"
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-
-# Configuration pour les fonctions serverless (optionnel)
-[functions]
-  directory = "netlify/functions"
