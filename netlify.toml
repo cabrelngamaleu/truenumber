@@ -6,7 +6,7 @@
   command = "npm run build"
   
   # Répertoire de publication
-  publish = "client/.next"
+  publish = ".next"
 
 [build.environment]
   # Version de Node.js
