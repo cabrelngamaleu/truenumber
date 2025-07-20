@@ -245,6 +245,162 @@ Après le démarrage du serveur, un compte administrateur par défaut est créé
 
 ## 🚀 Déploiement
 
+### 🌐 Option 1 : Netlify (Frontend) + Railway (Backend) - RECOMMANDÉ
+
+#### 🎯 Déploiement Frontend sur Netlify
+
+1. **Prérequis** :
+   - Compte GitHub avec le repository TrueNumber
+   - Compte Netlify gratuit : [netlify.com](https://netlify.com)
+
+2. **Étapes de déploiement** :
+   
+   a. **Connectez-vous à Netlify** :
+   - Allez sur [netlify.com](https://netlify.com)
+   - Cliquez sur "Sign up" puis "GitHub"
+   
+   b. **Importez votre projet** :
+   - Cliquez sur "New site from Git"
+   - Sélectionnez "GitHub" et autorisez l'accès
+   - Choisissez votre repository `truenumber`
+   
+   c. **Configuration automatique** :
+   - Netlify détecte automatiquement le fichier `netlify.toml`
+   - **Base directory** : `client`
+   - **Build command** : `npm run build`
+   - **Publish directory** : `client/.next`
+   
+   d. **Variables d'environnement** :
+   - Allez dans "Site settings" > "Environment variables"
+   - Ajoutez : `NEXT_PUBLIC_API_URL` = `https://votre-api-railway.up.railway.app/api`
+   
+   e. **Déployez** :
+   - Cliquez sur "Deploy site"
+   - Votre site sera disponible sur une URL comme `https://amazing-name-123456.netlify.app`
+
+#### 🚂 Déploiement Backend sur Railway
+
+1. **Prérequis** :
+   - Compte Railway gratuit : [railway.app](https://railway.app)
+
+2. **Étapes de déploiement** :
+   
+   a. **Connectez-vous à Railway** :
+   - Allez sur [railway.app](https://railway.app)
+   - Cliquez sur "Login" puis "GitHub"
+   
+   b. **Créez un nouveau projet** :
+   - Cliquez sur "New Project"
+   - Sélectionnez "Deploy from GitHub repo"
+   - Choisissez votre repository `truenumber`
+   
+   c. **Configuration automatique** :
+   - Railway détecte automatiquement Node.js
+   - Le fichier `railway.json` configure le déploiement
+   
+   d. **Variables d'environnement** :
+   - Dans le dashboard Railway, allez dans "Variables"
+   - Ajoutez :
+     ```
+     PORT=5000
+     JWT_SECRET=votre-super-secret-jwt-key-ici
+     NODE_ENV=production
+     MONGODB_URI=mongodb+srv://user:pass@cluster.mongodb.net/truenumber
+     ```
+   
+   e. **Déployez** :
+   - Railway déploie automatiquement
+   - Votre API sera disponible sur `https://votre-projet.up.railway.app`
+
+### 🌟 Option 2 : Render (Full-Stack)
+
+**Render** peut héberger à la fois le frontend et le backend gratuitement.
+
+#### Frontend sur Render :
+1. Allez sur [render.com](https://render.com)
+2. "New" > "Static Site"
+3. Connectez votre repository GitHub
+4. Configuration :
+   - **Build Command** : `cd client && npm install && npm run build`
+   - **Publish Directory** : `client/.next`
+
+#### Backend sur Render :
+1. "New" > "Web Service"
+2. Connectez votre repository GitHub
+3. Configuration :
+   - **Build Command** : `cd server && npm install`
+   - **Start Command** : `cd server && npm start`
+
+### 🔥 Option 3 : Surge.sh (Frontend uniquement)
+
+Pour un déploiement ultra-rapide du frontend :
+
+```bash
+# Installer Surge globalement
+npm install -g surge
+
+# Construire le projet
+cd client && npm run build
+
+# Déployer
+cd .next && surge
+```
+
+### ☁️ Option 4 : Heroku (Backend)
+
+Pour le backend sur Heroku :
+
+```bash
+# Installer Heroku CLI
+npm install -g heroku
+
+# Se connecter
+heroku login
+
+# Créer l'app
+heroku create truenumber-api
+
+# Variables d'environnement
+heroku config:set JWT_SECRET=votre-secret
+heroku config:set NODE_ENV=production
+
+# Déployer
+git subtree push --prefix server heroku main
+```
+
+---
+
+### 🔧 Configuration MongoDB Cloud (Gratuit)
+
+Pour la base de données, utilisez **MongoDB Atlas** (gratuit) :
+
+1. **Créez un compte** : [mongodb.com/cloud/atlas](https://mongodb.com/cloud/atlas)
+2. **Créez un cluster gratuit** (M0 Sandbox)
+3. **Configurez l'accès** :
+   - Ajoutez votre IP ou `0.0.0.0/0` pour tous
+   - Créez un utilisateur de base de données
+4. **Obtenez l'URI de connexion** :
+   ```
+   mongodb+srv://username:password@cluster.mongodb.net/truenumber
+   ```
+5. **Ajoutez l'URI** dans les variables d'environnement de votre service backend
+
+---
+
+### 🎯 Recommandation Finale
+
+**Combinaison recommandée** :
+- **Frontend** : Netlify (excellent pour Next.js, CDN global, HTTPS automatique)
+- **Backend** : Railway (simple, gratuit, base de données intégrée possible)
+- **Base de données** : MongoDB Atlas (gratuit, fiable, géré)
+
+Cette combinaison vous donne :
+- ✅ Déploiement gratuit complet
+- ✅ HTTPS automatique
+- ✅ Domaines personnalisés possibles
+- ✅ Déploiement automatique sur push Git
+- ✅ Logs et monitoring
+
 ### Déploiement sur Vercel (Frontend)
 
 1. **Prérequis** :
