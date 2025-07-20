@@ -65,9 +65,44 @@ TrueNumber/
 
 ## 🚀 Installation & Configuration
 
+### ⚡ Démarrage Rapide (Recommandé)
+
+**🎯 Lancement en 3 étapes simples :**
+
+1. **Clonez et naviguez** :
+```bash
+git clone https://github.com/cabrelngamaleu/truenumber.git
+cd truenumber
+```
+
+2. **Installez toutes les dépendances** :
+```bash
+npm run install:all
+```
+
+3. **Lancez l'application complète** :
+```bash
+npm run dev
+```
+
+🎉 **C'est tout !** L'application sera disponible sur :
+- **🌐 Frontend** : http://localhost:3000
+- **🔧 Backend API** : http://localhost:5000  
+- **📚 Documentation API** : http://localhost:5000/api-docs
+
+**👨‍💼 Compte admin par défaut** :
+- 📧 Email : `admin@truenumber.com`
+- 🔑 Mot de passe : `admin123`
+
+> **💡 Note** : Aucune configuration supplémentaire requise ! L'application utilise une base de données en mémoire pour la démonstration.
+
+---
+
+### 🔧 Configuration Manuelle (Optionnelle)
+
 ### Prérequis
 - Node.js (v18 ou supérieur)
-- MongoDB (instance locale ou cloud)
+- MongoDB (optionnel - utilise une base en mémoire par défaut)
 - npm ou yarn
 
 ### Configuration Backend
@@ -82,7 +117,7 @@ cd server
 npm install
 ```
 
-3. Créez un fichier `.env` dans le répertoire server :
+3. **(Optionnel)** Créez un fichier `.env` dans le répertoire server pour MongoDB :
 ```env
 PORT=5000
 MONGODB_URI=mongodb://localhost:27017/truenumber
@@ -90,9 +125,11 @@ JWT_SECRET=votre-clé-jwt-super-secrète-ici
 NODE_ENV=development
 ```
 
+> **Note** : Sans fichier `.env`, l'application utilise une base de données en mémoire pour la démonstration.
+
 4. Démarrez le serveur :
 ```bash
-node index.js
+npm run dev
 ```
 
 L'API sera disponible sur `http://localhost:5000`
@@ -109,10 +146,12 @@ cd client
 npm install
 ```
 
-3. Créez un fichier `.env.local` dans le répertoire client :
+3. **(Optionnel)** Créez un fichier `.env.local` dans le répertoire client :
 ```env
 NEXT_PUBLIC_API_URL=http://localhost:5000/api
 ```
+
+> **Note** : Sans fichier `.env.local`, l'application utilise l'URL par défaut `http://localhost:5000/api`.
 
 4. Démarrez le serveur de développement :
 ```bash
@@ -270,11 +309,62 @@ git subtree push --prefix server heroku main
 
 ## 🔧 Développement
 
+### 🚀 Scripts Disponibles
+
+```bash
+# Lancer l'application complète (frontend + backend)
+npm run dev
+
+# Lancer uniquement le backend
+npm run server:dev
+
+# Lancer uniquement le frontend  
+npm run client:dev
+
+# Installer toutes les dépendances
+npm run install:all
+
+# Construire pour la production
+npm run build
+
+# Démarrer en production
+npm start
+```
+
+### 🛠️ Dépannage
+
+**❌ Problème : "Port 3000 already in use"**
+```bash
+# Tuer le processus sur le port 3000
+npx kill-port 3000
+# Ou utiliser un autre port
+cd client && npm run dev -- -p 3001
+```
+
+**❌ Problème : "Port 5000 already in use"**
+```bash
+# Tuer le processus sur le port 5000
+npx kill-port 5000
+# Ou modifier le port dans server/index.js
+```
+
+**❌ Problème : "Module not found"**
+```bash
+# Réinstaller toutes les dépendances
+rm -rf node_modules client/node_modules server/node_modules
+rm package-lock.json client/package-lock.json server/package-lock.json
+npm run install:all
+```
+
+**❌ Problème : "Cannot connect to database"**
+- L'application fonctionne sans MongoDB (base en mémoire)
+- Pour utiliser MongoDB, installez-le localement ou utilisez MongoDB Atlas
+
 ### Lancement en Mode Développement
 ```bash
 # Backend
 cd server
-node index.js
+npm run dev
 
 # Frontend
 cd client
