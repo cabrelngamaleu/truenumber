@@ -352,11 +352,21 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Health check route
 app.get('/api/health', (req, res) => {
-  res.json({ 
+  res.status(200).json({ 
     status: 'OK',
     message: 'TrueNumber API is running',
     timestamp: new Date().toISOString(),
-    uptime: process.uptime()
+    uptime: process.uptime(),
+    environment: process.env.NODE_ENV || 'development',
+    port: PORT
+  });
+});
+
+// Railway health check
+app.get('/health', (req, res) => {
+  res.status(200).json({ 
+    status: 'healthy',
+    service: 'truenumber-api'
   });
 });
 
@@ -373,11 +383,14 @@ const startServer = async () => {
   try {
     await createDefaultAdmin();
     
-    app.listen(PORT, () => {
-      console.log(`🚀 Server started on port ${PORT}`);
-      console.log(`📚 API Documentation: http://localhost:${PORT}/api-docs`);
+    const HOST = process.env.NODE_ENV === 'production' ? '0.0.0.0' : 'localhost';
+    
+    app.listen(PORT, HOST, () => {
+      console.log(`🚀 Server started on ${HOST}:${PORT}`);
+      console.log(`📚 API Documentation: http://${HOST}:${PORT}/api-docs`);
       console.log(`🌐 Frontend URL: http://localhost:3000`);
       console.log('✅ Using in-memory database for demonstration');
+      console.log(`🔧 Environment: ${process.env.NODE_ENV || 'development'}`);
     });
   } catch (error) {
     console.error('❌ Server startup error:', error.message);
