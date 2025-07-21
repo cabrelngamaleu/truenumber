@@ -84,7 +84,7 @@ app.post('/api/auth/register', async (req, res) => {
       phone: phone || '',
       password: hashedPassword,
       role: 'client',
-      balance: 100, // Starting balance
+      balance: 0, // Starting balance
       createdAt: new Date()
     };
 
@@ -157,10 +157,6 @@ app.post('/api/game/play', authenticateToken, (req, res) => {
       return res.status(404).json({ message: 'User not found' });
     }
 
-    if (user.balance < 10) {
-      return res.status(400).json({ message: 'Insufficient balance' });
-    }
-
     // Generate random number between 0-100
     const generatedNumber = Math.floor(Math.random() * 101);
     
@@ -213,7 +209,7 @@ app.get('/api/users', authenticateToken, requireAdmin, (req, res) => {
 
 app.post('/api/users', authenticateToken, requireAdmin, async (req, res) => {
   try {
-    const { username, email, phone, password, role = 'client', balance = 100 } = req.body;
+    const { username, email, phone, password, role = 'client', balance = 0 } = req.body;
     
     const existingUser = users.find(u => u.email === email);
     if (existingUser) {
