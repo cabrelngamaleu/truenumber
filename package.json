@@ -11,14 +11,20 @@
     "start": "node railway-start.js",
     "install:all": "npm install && cd server && npm install && cd ../client && npm install"
   },
-  "keywords": ["truenumber", "game", "nodejs", "nextjs", "mongodb"],
+  "keywords": [
+    "truenumber",
+    "game",
+    "nodejs",
+    "nextjs",
+    "mongodb"
+  ],
   "author": "Développeur",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "^16.3.1",
-    "express": "^4.18.2",
-    "cors": "^2.8.5",
     "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.0"
