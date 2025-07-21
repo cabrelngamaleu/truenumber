@@ -2,10 +2,10 @@
 nixPkgs = ['nodejs-18_x', 'npm-9_x']
 
 [phases.install]
-cmds = ['cd server && npm install --production']
+cmds = ['npm install --production']
 
 [phases.build]
-cmds = ['echo "Backend ready for deployment"']
+cmds = ['echo "TrueNumber API ready for deployment"']
 
 [start]
-cmd = 'cd server && node railway-start.js'
+cmd = 'node railway-debug.js'
