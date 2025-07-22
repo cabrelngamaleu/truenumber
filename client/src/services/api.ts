@@ -10,7 +10,7 @@ import {
   UpdateUserData
 } from '@/types';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://truenumber-production.up.railway.app/api';
 
 // Configuration d'axios
 const api = axios.create({
