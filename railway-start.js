@@ -11,6 +11,17 @@ console.log('- NODE_ENV:', process.env.NODE_ENV);
 console.log('- PORT:', process.env.PORT);
 console.log('- RAILWAY_ENVIRONMENT:', process.env.RAILWAY_ENVIRONMENT);
 
+// Gestion des erreurs non capturées
+process.on('uncaughtException', (error) => {
+  console.error('❌ Uncaught Exception:', error);
+  process.exit(1);
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('❌ Unhandled Rejection at:', promise, 'reason:', reason);
+  process.exit(1);
+});
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 const JWT_SECRET = process.env.JWT_SECRET || 'truenumber-default-secret-key-2024';
@@ -253,7 +264,7 @@ const startServer = async () => {
     
     const server = app.listen(PORT, HOST, () => {
       console.log(`🚀 Server started on ${HOST}:${PORT}`);
-      console.log(`🌐 Railway URL: https://truenumber-production-b8b8.up.railway.app`);
+      console.log(`🌐 Railway URL: https://truenumber-production.up.railway.app`);
       console.log('✅ Using in-memory database for demonstration');
       console.log(`🔧 Environment: ${process.env.NODE_ENV || 'development'}`);
     });
