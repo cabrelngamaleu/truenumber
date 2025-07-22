@@ -17,7 +17,7 @@ export default function Home() {
   }, [user, router]);
 
   if (user) {
-    return null; // Redirection en cours
+    return null;
   }
 
   return (
@@ -76,7 +76,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-12 sm:mb-16 animate-bounce-in px-4">
             <Link href="/register" className="btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 group">
               <Play className="mr-2 h-5 w-5 sm:h-6 sm:w-6 group-hover:animate-pulse" />
-              Commencer à Jouer
+              Commencer a Jouer
               <ArrowRight className="ml-2 h-5 w-5 sm:h-6 sm:w-6 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link href="/login" className="btn-outline text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4">
@@ -156,7 +156,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center">
             <p className="text-white/60">
-              © 2025 Cabrel Ngamaleu. Fait avec ❤️ au Cameroun 🇨🇲
+              © 2025 Cabrel Ngamaleu. Fait avec amour au Cameroun
             </p>
           </div>
         </div>
