@@ -144,7 +144,7 @@ export default function Home() {
                   3
                 </div>
                 <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Resultat</h3>
-                <p className="text-white/70 text-sm sm:text-base">Si > 70 : +50 points | Si <= 70 : -35 points</p>
+                <p className="text-white/70 text-sm sm:text-base">Si &gt; 70 : +50 points | Si &lt;= 70 : -35 points</p>
               </div>
             </div>
           </div>
@@ -156,7 +156,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center">
             <p className="text-white/60">
-              © 2025 Cabrel Ngamaleu. Fait avec amour au Cameroun
+              &copy; 2025 Cabrel Ngamaleu. Fait avec amour au Cameroun
             </p>
           </div>
         </div>
