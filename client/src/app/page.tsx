@@ -22,10 +22,10 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
-      {/* Arrière-plan avec particules */}
+      {/* Arriere-plan avec particules */}
       <div className="absolute inset-0 bg-particles-bg opacity-50"></div>
       
-      {/* Éléments décoratifs flottants */}
+      {/* Elements decoratifs flottants */}
       <div className="absolute top-20 left-10 w-20 h-20 bg-cameroon-green/20 rounded-full animate-float blur-sm"></div>
       <div className="absolute top-40 right-20 w-16 h-16 bg-cameroon-yellow/20 rounded-full animate-float blur-sm" style={{ animationDelay: '1s' }}></div>
       <div className="absolute bottom-40 left-20 w-12 h-12 bg-cameroon-red/20 rounded-full animate-float blur-sm" style={{ animationDelay: '2s' }}></div>
@@ -49,10 +49,10 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Contenu principal */}
+      {/* Main Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
         <div className="text-center">
-          {/* Logo principal animé */}
+          {/* Logo principal anime */}
           <div className="mb-6 sm:mb-8 flex justify-center">
             <div className="relative">
               <div className="w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-cameroon-green via-cameroon-yellow to-cameroon-red rounded-2xl sm:rounded-3xl flex items-center justify-center shadow-2xl animate-pulse-glow">
@@ -68,7 +68,7 @@ export default function Home() {
           </h1>
           
           <p className="text-lg sm:text-xl lg:text-2xl text-white/80 mb-6 sm:mb-8 max-w-3xl mx-auto animate-slide-up px-4">
-            Le jeu de nombres aléatoires le plus excitant du Cameroun ! 
+            Le jeu de nombres aleatoires le plus excitant du Cameroun ! 
             Testez votre chance et gagnez gros avec les couleurs de notre nation.
           </p>
 
@@ -104,7 +104,7 @@ export default function Home() {
                 </div>
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">50,000+</h3>
-              <p className="text-white/70 text-sm sm:text-base">Parties Jouées</p>
+              <p className="text-white/70 text-sm sm:text-base">Parties Jouees</p>
             </div>
 
             <div className="futuristic-container p-6 sm:p-8 group hover:scale-105 transition-transform sm:col-span-2 lg:col-span-1">
@@ -114,7 +114,7 @@ export default function Home() {
                 </div>
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">1M+</h3>
-              <p className="text-white/70 text-sm sm:text-base">FCFA Distribués</p>
+              <p className="text-white/70 text-sm sm:text-base">FCFA Distribues</p>
             </div>
           </div>
 
@@ -130,20 +130,20 @@ export default function Home() {
                   1
                 </div>
                 <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Inscrivez-vous</h3>
-                <p className="text-white/70 text-sm sm:text-base">Créez votre compte et commencez avec un solde de 0</p>
+                <p className="text-white/70 text-sm sm:text-base">Creez votre compte et commencez avec un solde de 0</p>
               </div>
               <div className="text-center">
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-cameroon-yellow to-cameroon-yellow-dark rounded-full flex items-center justify-center mx-auto mb-4 text-gray-900 font-bold text-lg sm:text-xl">
                   2
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Générez</h3>
-                <p className="text-white/70 text-sm sm:text-base">Cliquez pour générer un nombre aléatoire entre 0 et 100</p>
+                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Generez</h3>
+                <p className="text-white/70 text-sm sm:text-base">Cliquez pour generer un nombre aleatoire entre 0 et 100</p>
               </div>
               <div className="text-center sm:col-span-2 lg:col-span-1">
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-cameroon-red to-cameroon-red-dark rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-lg sm:text-xl">
                   3
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Résultat</h3>
+                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Resultat</h3>
                 <p className="text-white/70 text-sm sm:text-base">Si > 70 : +50 points | Si <= 70 : -35 points</p>
               </div>
             </div>
