@@ -133,14 +133,14 @@ export default function Home() {
                 <p className="text-white/70 text-sm sm:text-base">Creez votre compte et commencez avec un solde de 0</p>
               </div>
               <div className="text-center">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-cameroon-yellow to-cameroon-yellow-dark rounded-full flex items-center justify-center mx-auto mb-4 text-gray-900 font-bold text-lg sm:text-xl">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-cameroon-red to-cameroon-red-dark rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-lg sm:text-xl">
                   2
                 </div>
                 <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Generez</h3>
                 <p className="text-white/70 text-sm sm:text-base">Cliquez pour generer un nombre aleatoire entre 0 et 100</p>
               </div>
               <div className="text-center sm:col-span-2 lg:col-span-1">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-cameroon-red to-cameroon-red-dark rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-lg sm:text-xl">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-cameroon-yellow to-cameroon-yellow-dark rounded-full flex items-center justify-center mx-auto mb-4 text-gray-900 font-bold text-lg sm:text-xl">
                   3
                 </div>
                 <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Resultat</h3>
