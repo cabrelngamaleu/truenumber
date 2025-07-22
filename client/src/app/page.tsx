@@ -99,8 +99,8 @@ export default function Home() {
 
             <div className="futuristic-container p-6 sm:p-8 group hover:scale-105 transition-transform">
               <div className="flex items-center justify-center mb-4">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-cameroon-yellow/20 to-cameroon-yellow/40 rounded-xl flex items-center justify-center border border-cameroon-yellow/30">
-                  <Star className="h-6 w-6 sm:h-8 sm:w-8 text-cameroon-yellow" />
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-cameroon-red/20 to-cameroon-red/40 rounded-xl flex items-center justify-center border border-cameroon-red/30">
+                  <Star className="h-6 w-6 sm:h-8 sm:w-8 text-cameroon-red" />
                 </div>
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">50,000+</h3>
@@ -109,8 +109,8 @@ export default function Home() {
 
             <div className="futuristic-container p-6 sm:p-8 group hover:scale-105 transition-transform sm:col-span-2 lg:col-span-1">
               <div className="flex items-center justify-center mb-4">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-cameroon-red/20 to-cameroon-red/40 rounded-xl flex items-center justify-center border border-cameroon-red/30">
-                  <Zap className="h-6 w-6 sm:h-8 sm:w-8 text-cameroon-red" />
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-cameroon-yellow/20 to-cameroon-yellow/40 rounded-xl flex items-center justify-center border border-cameroon-yellow/30">
+                  <Zap className="h-6 w-6 sm:h-8 sm:w-8 text-cameroon-yellow" />
                 </div>
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">1M+</h3>
