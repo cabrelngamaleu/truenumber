@@ -1,22 +1,11 @@
-# Corrections Railway - TrueNumber
+# Railway Deployment Fix
 
-## Version 1.1.0 - Corrections de déploiement
+This file contains the fixes applied to resolve Railway deployment issues:
 
-### Problèmes résolus :
-- ✅ Serveur configuré pour écouter sur 0.0.0.0 (requis par Railway)
-- ✅ Port dynamique correctement configuré
-- ✅ Script de démarrage Railway optimisé
-- ✅ Points de contrôle de santé améliorés
-- ✅ Variables d'environnement de production configurées
+1. Updated server to listen on 0.0.0.0 in production
+2. Added railway-start.js script for better Railway compatibility
+3. Improved health check endpoints
+4. Updated nixpacks and railway configurations
+5. Added production environment variables
 
-### Fichiers modifiés :
-- `server/index.js` - Configuration du serveur pour Railway
-- `server/railway-start.js` - Script de démarrage optimisé
-- `server/.env.production` - Variables d'environnement
-- `railway.json` - Configuration de déploiement
-- `nixpacks.toml` - Configuration de build
-
-### Test local réussi :
-Le serveur fonctionne correctement en local avec la configuration Railway.
-
-Date de correction : $(date)
+Date: $(date)

@@ -68,8 +68,8 @@ export default function Home() {
           </h1>
           
           <p className="text-lg sm:text-xl lg:text-2xl text-white/80 mb-6 sm:mb-8 max-w-3xl mx-auto animate-slide-up px-4">
-            Le jeu de prédiction de nombres le plus excitant du Cameroun ! 
-            Testez votre intuition et gagnez gros avec les couleurs de notre nation.
+            Le jeu de nombres aléatoires le plus excitant du Cameroun ! 
+            Testez votre chance et gagnez gros avec les couleurs de notre nation.
           </p>
 
           {/* Boutons d'action */}
@@ -130,21 +130,21 @@ export default function Home() {
                   1
                 </div>
                 <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Inscrivez-vous</h3>
-                <p className="text-white/70 text-sm sm:text-base">Créez votre compte et recevez votre solde de départ</p>
+                <p className="text-white/70 text-sm sm:text-base">Créez votre compte et commencez avec un solde de 0</p>
               </div>
               <div className="text-center">
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-cameroon-yellow to-cameroon-yellow-dark rounded-full flex items-center justify-center mx-auto mb-4 text-gray-900 font-bold text-lg sm:text-xl">
                   2
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Prédisez</h3>
-                <p className="text-white/70 text-sm sm:text-base">Devinez si le nombre généré sera pair ou impair</p>
+                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Générez</h3>
+                <p className="text-white/70 text-sm sm:text-base">Cliquez pour générer un nombre aléatoire entre 0 et 100</p>
               </div>
               <div className="text-center sm:col-span-2 lg:col-span-1">
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-cameroon-red to-cameroon-red-dark rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-lg sm:text-xl">
                   3
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Gagnez</h3>
-                <p className="text-white/70 text-sm sm:text-base">Doublez votre mise si votre prédiction est correcte !</p>
+                <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Résultat</h3>
+                <p className="text-white/70 text-sm sm:text-base">Si > 70 : +50 points | Si ≤ 70 : -35 points</p>
               </div>
             </div>
           </div>
