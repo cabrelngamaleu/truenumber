@@ -44,7 +44,7 @@ export default function Home() {
             Connexion
           </Link>
           <Link href="/register" className="btn-primary text-sm sm:text-base">
-            S'inscrire
+            S&apos;inscrire
           </Link>
         </div>
       </nav>
