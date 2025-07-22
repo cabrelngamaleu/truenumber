@@ -144,7 +144,7 @@ export default function Home() {
                   3
                 </div>
                 <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Résultat</h3>
-                <p className="text-white/70 text-sm sm:text-base">Si > 70 : +50 points | Si ≤ 70 : -35 points</p>
+                <p className="text-white/70 text-sm sm:text-base">Si > 70 : +50 points | Si <= 70 : -35 points</p>
               </div>
             </div>
           </div>
